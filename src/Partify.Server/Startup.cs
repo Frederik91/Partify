@@ -83,6 +83,8 @@ namespace Partify.Server
                 app.UseBlazorDebugging();
             }
 
+            app.ApplicationServices.GetService<PartifyContext>().Database.EnsureCreated();
+
             app.UseCors("CorsPolicy");
             app.UseSwagger();
             app.UseSwaggerUI(c =>

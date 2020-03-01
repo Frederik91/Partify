@@ -1,7 +1,4 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using Partify.Shared.Helpers;
-using Partify.Shared.Models.Spotify;
+﻿using Partify.Shared.Helpers;
 using Xunit;
 
 namespace Partify.Shared.Tests

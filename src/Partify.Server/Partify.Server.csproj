@@ -17,9 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Partify.Database\Partify.Database.csproj" />
-    <ProjectReference Include="..\Client\Partify.Client.csproj" />
-    <ProjectReference Include="..\Shared\Partify.Shared.csproj" />
+    <ProjectReference Include="..\Partify.Client\Partify.Client.csproj" />
+    <ProjectReference Include="..\Partify.Database\Partify.Database.csproj" />
+    <ProjectReference Include="..\Partify.Shared\Partify.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -40,7 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Partify\Shared\Partify.Shared.csproj" />
+    <ProjectReference Include="..\Partify.Shared\Partify.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
