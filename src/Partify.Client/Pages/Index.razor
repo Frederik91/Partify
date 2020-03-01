@@ -59,9 +59,10 @@
         var artist = _state?.TrackWindow?.CurrentTrack?.Artists?.FirstOrDefault()?.Name;
         var album = _state?.TrackWindow?.CurrentTrack?.Album?.Name;
         var song = _state?.TrackWindow?.CurrentTrack?.Name;
-        if (!string.IsNullOrWhiteSpace(artist) || !string.IsNullOrWhiteSpace(album) || !string.IsNullOrWhiteSpace(song))
+        var spotifyId = _state?.TrackWindow?.CurrentTrack?.Id;
+        if (!string.IsNullOrEmpty(spotifyId) && (!string.IsNullOrWhiteSpace(artist) || !string.IsNullOrWhiteSpace(album) || !string.IsNullOrWhiteSpace(song)))
         {
-            var videoResultResponse = await HttpClient.GetAsync($"api/YouTube/VideoBySong?artist={artist}&album={album}&song={song}");
+            var videoResultResponse = await HttpClient.GetAsync($"api/YouTube/VideoBySong?spotifyId={spotifyId}artist={artist}&album={album}&song={song}");
             if (videoResultResponse.IsSuccessStatusCode)
             {
                 var videoResult = await videoResultResponse.Content.ReadAsAsync<YouTubeSongResult>();
