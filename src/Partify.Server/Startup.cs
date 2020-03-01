@@ -46,7 +46,7 @@ namespace Partify.Server
                     ApplicationName = "Partify"
                 }
             ));
-            services.AddDbContextPool<PartifyContext>(x => x.UseSqlite("partify.db"));
+            services.AddDbContextPool<PartifyContext>(x => x.UseSqlite("Data Source=partify.db"));
             services.AddTransient<IYouTubeServiceWrapper, YouTubeServiceWrapper>();
             services.AddApplicationInsightsTelemetry();
             services.AddSwaggerGen(c =>
