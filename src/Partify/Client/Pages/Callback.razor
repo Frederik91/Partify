@@ -1,0 +1,21 @@
+﻿@page "/callback"
+@using System.Net
+@using System.Text.RegularExpressions
+@using Newtonsoft.Json
+@using Partify.Shared.Helpers
+@using Partify.Shared.Models
+@using Partify.Shared.Models.Spotify
+
+@inject NavigationManager NavigationManager
+@code
+{
+    protected override void OnInitialized()
+    {
+        States.Token = Regex.Match(NavigationManager.Uri, @"(?<=access_token=).+?(?=&)").Value;
+        if (string.IsNullOrWhiteSpace(States.Token))
+            throw new Exception("Could not get token from string: " + NavigationManager.Uri);
+
+        NavigationManager.NavigateTo("/");
+
+    }
+}

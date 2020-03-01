@@ -1,0 +1,76 @@
+﻿@page "/"
+@page "/index.html"
+@using System.Net
+@using System.Web
+@using Newtonsoft.Json
+@using Partify.Shared.Helpers
+@using Partify.Shared.Models
+@using Partify.Shared.Models.Spotify
+
+@inject IJSRuntime JsRuntime
+@inject HttpClient HttpClient
+@inject NavigationManager NavigationManager
+@code
+{
+    private SpotifyState _state = null;
+    private string _currentTrackId;
+    private bool _isPaused = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (string.IsNullOrWhiteSpace(States.Token))
+        {
+            var spotifyAuthUrlResult = await HttpClient.PostAsJsonAsync("api/Spotify/AuthenticationUrl", HttpClient.BaseAddress.AbsoluteUri);
+            if (spotifyAuthUrlResult.IsSuccessStatusCode)
+            {
+                NavigationManager.NavigateTo(await spotifyAuthUrlResult.Content.ReadAsStringAsync());
+                return;
+            }
+
+        }
+
+        await JsRuntime.InvokeVoidAsync("registerInstance", DotNetObjectReference.Create(this));
+        await JsRuntime.InvokeVoidAsync("initializePlayer", States.Token);
+    }
+
+    [JSInvokable]
+    public async Task OnPlayerStateChanged(object o)
+    {
+        _state = SpotifyStateSerializer.Deserialize(o.ToString());
+        if (_state?.TrackWindow?.CurrentTrack is null)
+            return;
+
+        if (_state.Paused && !_isPaused)
+        {
+            _isPaused = true;
+            await JsRuntime.InvokeVoidAsync("pauseVideo");
+        }
+        else if (!_state.Paused && _isPaused)
+        {
+            _isPaused = false;
+            await JsRuntime.InvokeVoidAsync("playVideo");
+        }
+
+
+        if (_state.TrackWindow.CurrentTrack.Id == _currentTrackId)
+            return;
+
+        _currentTrackId = _state.TrackWindow.CurrentTrack.Id;
+        var artist = _state?.TrackWindow?.CurrentTrack?.Artists?.FirstOrDefault()?.Name;
+        var album = _state?.TrackWindow?.CurrentTrack?.Album?.Name;
+        var song = _state?.TrackWindow?.CurrentTrack?.Name;
+        if (!string.IsNullOrWhiteSpace(artist) || !string.IsNullOrWhiteSpace(album) || !string.IsNullOrWhiteSpace(song))
+        {
+            var videoResultResponse = await HttpClient.GetAsync($"api/YouTube/VideoBySong?artist={artist}&album={album}&song={song}");
+            if (videoResultResponse.IsSuccessStatusCode)
+            {
+                var videoResult = await videoResultResponse.Content.ReadAsAsync<YouTubeSongResult>();
+                await JsRuntime.InvokeVoidAsync("loadVideo", videoResult.VideoId);
+            }
+
+        }
+
+        StateHasChanged();
+    }
+
+}

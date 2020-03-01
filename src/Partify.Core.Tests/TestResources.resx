@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SpotifyStateJson" xml:space="preserve">
+    <value>{"context":{"uri":"spotify:artist:4UXqAaa6dQYAk18Lv7PEgX","metadata":{}},"bitrate":0,"position":9834,"duration":275460,"paused":true,"shuffle":false,"repeat_mode":0,"track_window":{"current_track":{"id":"6MWODwIhaEYqa994aF20My","uri":"spotify:track:6MWODwIhaEYqa994aF20My","type":"track","linked_from_uri":null,"linked_from":{"uri":null,"id":null},"media_type":"audio","name":"(Coffee's For Closers)","duration_ms":275460,"artists":[{"name":"Fall Out Boy","uri":"spotify:artist:4UXqAaa6dQYAk18Lv7PEgX"}],"album":{"uri":"spotify:album:6LMC7ZuVNDUQ0tHpGKdd9K","name":"Folie à Deux","images":[{"url":"https://i.scdn.co/image/ab67616d00001e02d29fff84ab370afbaf13d968","height":300,"width":300},{"url":"https://i.scdn.co/image/ab67616d00004851d29fff84ab370afbaf13d968","height":64,"width":64},{"url":"https://i.scdn.co/image/ab67616d0000b273d29fff84ab370afbaf13d968","height":640,"width":640}]},"is_playable":true},"next_tracks":[{"id":"0h5tb8J4Q9LBbegXrHPvVs","uri":"spotify:track:0h5tb8J4Q9LBbegXrHPvVs","type":"track","linked_from_uri":null,"linked_from":{"uri":null,"id":null},"media_type":"audio","name":"What A Catch, Donnie","duration_ms":290800,"artists":[{"name":"Fall Out Boy","uri":"spotify:artist:4UXqAaa6dQYAk18Lv7PEgX"}],"album":{"uri":"spotify:album:6LMC7ZuVNDUQ0tHpGKdd9K","name":"Folie à Deux","images":[{"url":"https://i.scdn.co/image/ab67616d00001e02d29fff84ab370afbaf13d968","height":300,"width":300},{"url":"https://i.scdn.co/image/ab67616d00004851d29fff84ab370afbaf13d968","height":64,"width":64},{"url":"https://i.scdn.co/image/ab67616d0000b273d29fff84ab370afbaf13d968","height":640,"width":640}]},"is_playable":true},{"id":"6RyP4ofBSZRQgs8G8y58Kc","uri":"spotify:track:6RyP4ofBSZRQgs8G8y58Kc","type":"track","linked_from_uri":null,"linked_from":{"uri":null,"id":null},"media_type":"audio","name":"27","duration_ms":192080,"artists":[{"name":"Fall Out Boy","uri":"spotify:artist:4UXqAaa6dQYAk18Lv7PEgX"}],"album":{"uri":"spotify:album:6LMC7ZuVNDUQ0tHpGKdd9K","name":"Folie à Deux","images":[{"url":"https://i.scdn.co/image/ab67616d00001e02d29fff84ab370afbaf13d968","height":300,"width":300},{"url":"https://i.scdn.co/image/ab67616d00004851d29fff84ab370afbaf13d968","height":64,"width":64},{"url":"https://i.scdn.co/image/ab67616d0000b273d29fff84ab370afbaf13d968","height":640,"width":640}]},"is_playable":true}],"previous_tracks":[{"id":"1hKwUBcXShPmhVE8JY5SgY","uri":"spotify:track:1hKwUBcXShPmhVE8JY5SgY","type":"track","linked_from_uri":null,"linked_from":{"uri":null,"id":null},"media_type":"audio","name":"Headfirst Slide Into Cooperstown On A Bad Bet","duration_ms":234493,"artists":[{"name":"Fall Out Boy","uri":"spotify:artist:4UXqAaa6dQYAk18Lv7PEgX"}],"album":{"uri":"spotify:album:6LMC7ZuVNDUQ0tHpGKdd9K","name":"Folie à Deux","images":[{"url":"https://i.scdn.co/image/ab67616d00001e02d29fff84ab370afbaf13d968","height":300,"width":300},{"url":"https://i.scdn.co/image/ab67616d00004851d29fff84ab370afbaf13d968","height":64,"width":64},{"url":"https://i.scdn.co/image/ab67616d0000b273d29fff84ab370afbaf13d968","height":640,"width":640}]},"is_playable":true},{"id":"32qijvSiSjLy16GKczwHlW","uri":"spotify:track:32qijvSiSjLy16GKczwHlW","type":"track","linked_from_uri":null,"linked_from":{"uri":null,"id":null},"media_type":"audio","name":"The (Shipped) Gold Standard","duration_ms":198800,"artists":[{"name":"Fall Out Boy","uri":"spotify:artist:4UXqAaa6dQYAk18Lv7PEgX"}],"album":{"uri":"spotify:album:6LMC7ZuVNDUQ0tHpGKdd9K","name":"Folie à Deux","images":[{"url":"https://i.scdn.co/image/ab67616d00001e02d29fff84ab370afbaf13d968","height":300,"width":300},{"url":"https://i.scdn.co/image/ab67616d00004851d29fff84ab370afbaf13d968","height":64,"width":64},{"url":"https://i.scdn.co/image/ab67616d0000b273d29fff84ab370afbaf13d968","height":640,"width":640}]},"is_playable":true}]},"timestamp":1583061124613,"restrictions":{"disallow_pausing_reasons":["already_paused"]},"disallows":{"pausing":true}}</value>
+  </data>
+</root>
